@@ -1,8 +1,7 @@
-import 'phaser';
-import dude from '../assets/dude.png';
+import Phaser from 'phaser';
 
 export default class InstructionsScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Instructions');
   }
 
@@ -14,7 +13,7 @@ export default class InstructionsScene extends Phaser.Scene {
     this.title = this.add.text(400, 200, 'Instructions', {
       font: '50px monospace',
       fill: '#aaaaaa',
-      align: 'center'
+      align: 'center',
     });
     this.title.setOrigin(0.5, 0.5);
 
@@ -24,10 +23,10 @@ export default class InstructionsScene extends Phaser.Scene {
       350,
       'Move to left and right using the\n keyboard arrows left and right\nrespectively, jump using up arrow,\n and try to collect all\n the stars avioding the bombs!',
       {
-        font: '30px monospace',
+        font: '25px monospace',
         fill: '#999',
-        align: 'center'
-      }
+        align: 'center',
+      },
     );
     this.text.setOrigin(0.5, 0.5);
 
@@ -53,4 +52,4 @@ export default class InstructionsScene extends Phaser.Scene {
       this.scene.start('Title');
     });
   }
-};
+}
