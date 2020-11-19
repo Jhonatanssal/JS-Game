@@ -1,16 +1,16 @@
-import 'phaser';
+import Phaser from 'phaser';
 import bootLogo from '../assets/logogif.gif';
 
 export default class BootScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Boot');
   }
 
-  preload () {
+  preload() {
     this.load.image('logo', bootLogo);
   }
 
-  create () {
+  create() {
     this.scene.start('Preloader');
   }
-};
+}
