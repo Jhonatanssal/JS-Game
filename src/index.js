@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import '../styles/style.css';
 import config from './Config/config';
 import BootScene from './Scenes/BootScene';
 import CreditsScene from './Scenes/CreditsScene';
