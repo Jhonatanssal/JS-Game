@@ -7,7 +7,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
   }
 
   async create() {
-    const response = await api.getScores();
+    const response = await api.ScoreList();
     const scoreList = response.result.sort((a, b) => b.score - a.score);
     let player = '';
     for (let i = 0; i < 5; i += 1) {

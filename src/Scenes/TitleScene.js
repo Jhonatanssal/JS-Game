@@ -1,15 +1,8 @@
 import Phaser from 'phaser';
-import star from '../assets/star.png';
-import dude from '../assets/dude.png';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
     super('Title');
-  }
-
-  preload() {
-    this.load.image('star', star);
-    this.load.image('dude', dude);
   }
 
   create() {
