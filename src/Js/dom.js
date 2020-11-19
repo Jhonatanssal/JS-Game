@@ -27,7 +27,7 @@ const Dom = (() => {
       button.onclick = () => {
         if (input.value !== '') {
           form.innerHTML = '<h3 id="submitting">Posting... </h3>';
-          scoreAPI.submitScores(input.value, score).then((response) => {
+          scoreAPI.submit(input.value, score).then((response) => {
             form.innerHTML = `<h3 id="response">${response.result} </h3>`;
           });
         } else {

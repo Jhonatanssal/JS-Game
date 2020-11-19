@@ -1,7 +1,7 @@
 const api = (() => {
   const key = '6TXhIy7RINUnPNtbAvct';
 
-  const getScores = async () => {
+  const ScoreList = async () => {
     try {
       const scores = await fetch(
         `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores/`,
@@ -19,7 +19,7 @@ const api = (() => {
     }
   };
 
-  const submitScores = async (name, score) => {
+  const submit = async (name, score) => {
     try {
       const result = await fetch(
         `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores/`,
@@ -42,7 +42,7 @@ const api = (() => {
     }
   };
 
-  return { submitScores, getScores };
+  return { submit, ScoreList };
 })();
 
 export default api;
