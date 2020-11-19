@@ -1,18 +1,18 @@
-import 'phaser';
+import Phaser from 'phaser';
 import star from '../assets/star.png';
 import dude from '../assets/dude.png';
 
 export default class TitleScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Title');
   }
 
-  preload () {
+  preload() {
     this.load.image('star', star);
     this.load.image('dude', dude);
   }
 
-  create () {
+  create() {
     // Images
     this.add.image(400, 80, 'star');
     this.add.image(400, 130, 'dude');
@@ -60,4 +60,4 @@ export default class TitleScene extends Phaser.Scene {
       this.scene.start('Credits');
     });
   }
-};
+}
