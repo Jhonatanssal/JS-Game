@@ -1,40 +1,48 @@
 const api = (() => {
-  const socresList = async () => {
+  const key = '6TXhIy7RINUnPNtbAvct';
+
+  const getScores = async () => {
     try {
       const scores = await fetch(
-        `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/6TXhIy7RINUnPNtbAvct/scores`, {
+        `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores/`,
+        {
+          method: 'GET',
           headers: {
+            Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          method: 'GET',
-        }
+        },
       );
       return scores.json();
-    } catch(error) {
+    } catch (error) {
       return error.json();
     }
   };
 
-  const submit = async (name, score) => {
+  const submitScores = async (name, score) => {
     try {
-      const score = await fetch(
-        `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/6TXhIy7RINUnPNtbAvct/scores`, {
+      const result = await fetch(
+        `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores/`,
+        {
+          method: 'POST',
           headers: {
+            Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          method: 'POST',
           body: JSON.stringify({
             user: name,
-            score: Number(score)
+            score: Number(score),
           }),
         },
       );
-      return score.json();
-    } catch(error) {
+
+      return result.json();
+    } catch (error) {
       return error.json();
     }
   };
-  return { socresList, submit };
+
+  return { submitScores, getScores };
 })();
 
 export default api;
