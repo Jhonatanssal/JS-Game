@@ -4,8 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "build": "webpack --config webpack/prod.js ",
     "start": "webpack-dev-server --config webpack/base.js --open"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "setupFilesAfterEnv": [
+      "jest-expect-subclass"
+    ],
+    "moduleNameMapper": {
+      "\\.(gif|ttf|eot|svg|png|mp3)$": "<rootDir>/test/mocks/fileMock.js"
+    }
   },
   "repository": {
     "type": "git",
