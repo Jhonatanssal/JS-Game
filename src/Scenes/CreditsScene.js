@@ -1,12 +1,11 @@
-import 'phaser';
-import dude from '../assets/dude.png';
+import Phaser from 'phaser';
 
 export default class CreditsScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Credits');
   }
 
-  create () {
+  create() {
     // Top image
     this.add.sprite(400, 100, 'dude');
 
@@ -14,7 +13,7 @@ export default class CreditsScene extends Phaser.Scene {
     this.title = this.add.text(400, 200, 'Credits', {
       font: '50px monospace',
       fill: '#aaaaaa',
-      align: 'center'
+      align: 'center',
     });
     this.title.setOrigin(0.5, 0.5);
 
@@ -22,12 +21,12 @@ export default class CreditsScene extends Phaser.Scene {
     this.title = this.add.text(
       400,
       350,
-      "This game has been built with help from:\n - Phaser - Phaser-Documentation\n- Mupa M'mbetsa Nzaphila - Microverse.\n\n All of the assets were taken from\n Phaser mainpage.",
+      "This game has been built with\ntechnologies and help from:\n\n - Phaser - Phaser-Documentation\n- Mupa M'mbetsa Nzaphila - Microverse.\n\n All of the assets were taken from\n Phaser mainpage.",
       {
         font: '25px monospace',
         fill: '#999999',
-        align: 'center'
-      }
+        align: 'center',
+      },
     );
     this.title.setOrigin(0.5, 0.5);
 
@@ -53,4 +52,4 @@ export default class CreditsScene extends Phaser.Scene {
       this.scene.start('Title');
     });
   }
-};
+}
